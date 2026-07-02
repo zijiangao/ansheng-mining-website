@@ -92,6 +92,38 @@ a {
   opacity: 1;
 }
 
+.language-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.site-header.is-scrolled .language-switcher,
+.site-header.is-open .language-switcher {
+  border-color: var(--line);
+  background: var(--white);
+}
+
+.language-switcher button {
+  min-width: 38px;
+  height: 30px;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.language-switcher button[aria-pressed="true"] {
+  color: var(--white);
+  background: var(--green);
+}
+
 .menu-button {
   display: none;
   width: 42px;
@@ -531,6 +563,10 @@ textarea:focus {
     box-shadow: 0 20px 35px rgba(16, 23, 19, 0.1);
   }
 
+  .language-switcher {
+    margin-left: auto;
+  }
+
   .site-header.is-open .site-nav {
     display: grid;
   }
@@ -575,7 +611,7 @@ textarea:focus {
 
   .brand {
     min-width: 0;
-    width: min(280px, calc(100vw - 92px));
+    width: min(230px, calc(100vw - 154px));
   }
 
   .brand-logo {
