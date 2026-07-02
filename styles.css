@@ -63,35 +63,18 @@ a {
 .brand {
   display: flex;
   align-items: center;
-  gap: 12px;
-  min-width: 260px;
+  min-width: min(360px, 46vw);
+  max-width: 430px;
 }
 
-.brand-mark {
-  display: grid;
-  width: 42px;
-  height: 42px;
-  place-items: center;
-  color: var(--white);
-  background: var(--green);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  font-weight: 800;
-}
-
-.brand strong,
-.brand small {
-  display: block;
-}
-
-.brand strong {
-  font-size: 15px;
-  letter-spacing: 0;
-}
-
-.brand small {
-  margin-top: 1px;
-  font-size: 11px;
-  opacity: 0.78;
+.brand-logo {
+  width: 100%;
+  height: 52px;
+  object-fit: contain;
+  object-position: left center;
+  padding: 7px 10px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 8px 24px rgba(16, 23, 19, 0.12);
 }
 
 .site-nav {
@@ -592,14 +575,12 @@ textarea:focus {
 
   .brand {
     min-width: 0;
+    width: min(280px, calc(100vw - 92px));
   }
 
-  .brand strong {
-    font-size: 13px;
-  }
-
-  .brand small {
-    display: none;
+  .brand-logo {
+    height: 42px;
+    padding: 6px 8px;
   }
 
   .hero {
