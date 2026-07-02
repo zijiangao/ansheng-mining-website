@@ -8,7 +8,7 @@ const translations = {
     title: "新加坡安胜有限公司 | Singapore Excellen Pte Ltd",
     metaDescription:
       "新加坡安胜有限公司专注于铜钴等关键矿产资源投资、项目开发、工程协同与长期价值管理。",
-    nav: ["公司概览", "项目布局", "能力体系", "责任治理", "联系"],
+    nav: ["公司概览", "项目布局", "铜产品贸易", "能力体系", "责任治理", "联系"],
     menuLabel: "打开导航",
     heroEyebrow: "Copper & Cobalt Resource Investment",
     heroTitle: "面向能源转型金属的长期矿业投资平台",
@@ -50,6 +50,18 @@ const translations = {
       ["建设", "与母公司、项目公司、客户及物流服务方协同订单、质量、交付与结算安排。"],
       ["运营", "围绕阴极铜、粗制氢氧化钴及相关矿产品开展销售、贸易、物流和合规管理。"],
     ],
+    copperEyebrow: "Copper Trading",
+    copperTitle: "铜产品贸易",
+    copperSymbolCopy: "铜是电网、建筑、机械制造、新能源汽车和工业设备的重要基础金属。",
+    copperApproachTitle: "我们的贸易方式",
+    copperApproachCopy:
+      "新加坡安胜围绕刚果（金）相关项目的阴极铜及铜钴相关产品，协同客户开发、合同执行、质量文件、物流安排和结算管理。平台连接项目端供给与国际客户需求，提供稳健、透明的实物金属贸易服务。",
+    copperPillars: [
+      ["产品", "阴极铜、铜精矿及相关铜钴中间产品，以正式合同和项目文件为准。"],
+      ["物流", "根据客户目的地协调陆运、港口、海运、仓储、报关和交付文件。"],
+      ["质量", "配合检验、取样、规格确认和单证流转，保障交易执行可核验。"],
+      ["风控", "关注价格、信用、汇率、制裁、合规和交付风险，维护交易稳定性。"],
+    ],
     capabilityEyebrow: "Capabilities",
     capabilityTitle: "能力体系",
     capabilities: [
@@ -81,7 +93,7 @@ const translations = {
     title: "Singapore Excellen Pte Ltd | Copper & Cobalt Resource Investment",
     metaDescription:
       "Singapore Excellen Pte Ltd focuses on copper and cobalt resource investment, project development, engineering coordination, and long-term asset value management.",
-    nav: ["Company", "Projects", "Capabilities", "Responsibility", "Contact"],
+    nav: ["Company", "Projects", "Copper", "Capabilities", "Responsibility", "Contact"],
     menuLabel: "Open navigation",
     heroEyebrow: "Copper & Cobalt Resource Investment",
     heroTitle: "A long-term mining investment platform for energy-transition metals",
@@ -122,6 +134,19 @@ const translations = {
       ["Design", "Assessment of mining, beneficiation, roasting, hydrometallurgy, utilities, and tailings facility plans."],
       ["Build", "Coordinating orders, quality, delivery, and settlement among the parent company, project companies, customers, and logistics providers."],
       ["Operate", "Managing sales, trading, logistics, and compliance for cathode copper, crude cobalt hydroxide, and related mineral products."],
+    ],
+    copperEyebrow: "Copper Trading",
+    copperTitle: "Copper Products",
+    copperSymbolCopy:
+      "Copper is a foundational metal for power grids, construction, machinery, electric vehicles, and industrial equipment.",
+    copperApproachTitle: "Our Trading Approach",
+    copperApproachCopy:
+      "Singapore Excellen coordinates customer development, contract execution, quality documents, logistics arrangements, and settlement management for cathode copper and related copper-cobalt products from DRC-linked projects. The platform connects project-side supply with international customer demand, providing stable and transparent physical metals trading services.",
+    copperPillars: [
+      ["Products", "Cathode copper, copper concentrate, and related copper-cobalt intermediate products, subject to formal contracts and project documents."],
+      ["Logistics", "Coordinating inland transport, ports, ocean freight, warehousing, customs clearance, and delivery documents according to customer destinations."],
+      ["Quality", "Supporting inspection, sampling, specification confirmation, and document circulation to keep transaction execution verifiable."],
+      ["Risk Control", "Monitoring price, credit, currency, sanctions, compliance, and delivery risks to maintain transaction stability."],
     ],
     capabilityEyebrow: "Capabilities",
     capabilityTitle: "Capabilities",
@@ -206,6 +231,16 @@ function applyLanguage(lang) {
   });
   setGroup(".timeline div", text.timeline, (element, value) => {
     element.querySelector("span").textContent = value[0];
+    element.querySelector("p").textContent = value[1];
+  });
+
+  setText("#copper .eyebrow", text.copperEyebrow);
+  setText("#copper h2", text.copperTitle);
+  setText(".copper-symbol p", text.copperSymbolCopy);
+  setText(".copper-approach h3", text.copperApproachTitle);
+  setText(".copper-approach p", text.copperApproachCopy);
+  setGroup(".copper-pillars > div", text.copperPillars, (element, value) => {
+    element.querySelector("h3").textContent = value[0];
     element.querySelector("p").textContent = value[1];
   });
 

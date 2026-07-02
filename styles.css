@@ -449,6 +449,89 @@ dd {
   color: var(--muted);
 }
 
+.copper-section {
+  width: 100%;
+  max-width: none;
+  padding-left: max(20px, calc((100% - 1180px) / 2));
+  padding-right: max(20px, calc((100% - 1180px) / 2));
+  background: var(--paper);
+}
+
+.copper-layout {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 16px;
+  align-items: stretch;
+}
+
+.copper-card,
+.copper-pillars > div {
+  background: var(--white);
+  box-shadow: 0 1px 0 rgba(16, 23, 19, 0.06);
+}
+
+.copper-symbol {
+  min-height: 310px;
+  display: grid;
+  align-content: center;
+  padding: 28px;
+  color: var(--white);
+  background:
+    linear-gradient(135deg, rgba(173, 95, 44, 0.94), rgba(40, 92, 75, 0.92)),
+    url("assets/hero-mining.png") center / cover;
+}
+
+.copper-symbol span {
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.copper-symbol strong {
+  margin: 6px 0 16px;
+  font-size: 76px;
+  line-height: 0.95;
+}
+
+.copper-symbol p {
+  margin-bottom: 0;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.copper-approach {
+  padding: clamp(28px, 5vw, 48px);
+}
+
+.copper-approach p {
+  max-width: 820px;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.copper-pillars {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.copper-pillars > div {
+  min-height: 210px;
+  padding: 24px;
+  border-top: 4px solid var(--copper);
+}
+
+.copper-pillars span {
+  color: var(--copper);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.copper-pillars p {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
 .capability-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -594,12 +677,14 @@ textarea:focus {
   .intro-grid,
   .two-column,
   .project-layout,
+  .copper-layout,
   .contact-section {
     grid-template-columns: 1fr;
   }
 
   .capability-grid,
-  .responsibility-grid {
+  .responsibility-grid,
+  .copper-pillars {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -638,6 +723,7 @@ textarea:focus {
   .intro-grid,
   .capability-grid,
   .responsibility-grid,
+  .copper-pillars,
   dl {
     grid-template-columns: 1fr;
   }
